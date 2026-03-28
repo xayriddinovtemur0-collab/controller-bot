@@ -5,7 +5,7 @@ from aiogram.filters import Command
 from apscheduler.schedulers.asyncio import AsyncIOScheduler
 from datetime import datetime
 import os
-TOKEN = os.getenv("TOKEN")
+TOKEN = "8708505472:AAFE852W2KeOQs4ZQzj5OJxnl-BPXjffAwE"
 bot = Bot(token=TOKEN)
 dp = Dispatcher()
 scheduler = AsyncIOScheduler(timezone="Asia/Tashkent")
