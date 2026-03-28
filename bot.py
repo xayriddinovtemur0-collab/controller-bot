@@ -5,7 +5,8 @@ from aiogram.filters import Command
 from apscheduler.schedulers.asyncio import AsyncIOScheduler
 from datetime import datetime
 
-TOKEN = "8708505472:AAFE852W2KeOQs4ZQzj5OJxnl-BPXjffAwE"
+import os
+TOKEN = os.getenv("8708505472:AAFE852W2KeOQs4ZQzj5OJxnl-BPXjffAwE")
 
 bot = Bot(token=TOKEN)
 dp = Dispatcher()
@@ -113,6 +114,14 @@ async def send_post(message: Message):
     except:
         await message.answer("❌ Post yuborilmadi! Bot admin ekanligini tekshiring.")
 
+@dp.message(Command("cancel"))
+async def cancel_schedule(message: Message):
+    jobs = scheduler.get_jobs()
+    if not jobs:
+        await message.answer("Hech qanday rejalashtirilgan post yo'q!")
+        return
+    scheduler.remove_all_jobs()
+    await message.answer("✅ Barcha rejalashtirilgan postlar bekor qilindi!")
 async def main():
     scheduler.start()
     print("Bot ishga tushdi!")
