@@ -6,7 +6,7 @@ from apscheduler.schedulers.asyncio import AsyncIOScheduler
 from datetime import datetime
 
 import os
-TOKEN = os.getenv("8708505472:AAFE852W2KeOQs4ZQzj5OJxnl-BPXjffAwE")
+TOKEN = os.getenv("TOKEN")
 
 bot = Bot(token=TOKEN)
 dp = Dispatcher()
