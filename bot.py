@@ -192,10 +192,6 @@ async def main():
     await dp.start_polling(bot)
 
 asyncio.run(main())
-```
 
-**Ctrl+S** bosib saqlang, keyin terminaldа:
 ```
 git add .
-git commit -m "add photo video"
-git push
